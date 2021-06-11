@@ -1,3 +1,3 @@
 export STORAGE_BUCKET=$1
 export MODEL_DIR=gs://${STORAGE_BUCKET}/models/bigbird
-export TPU_NAME=bigbird_training
+export TPU_NAME=train-bigbird
