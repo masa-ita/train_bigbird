@@ -7,4 +7,4 @@
   --model_type=bpe \
   --max_sentence_length=16384 \
   --control_symbols="[CLS],[SEP],[MASK]" \
-  --user_defined_symbols="_START_ARTICLE_,_START_SENCTION_,_START_PARAGRAPH_,_NEWLINE_"
+  --user_defined_symbols="_START_ARTICLE_,_START_SECTION_,_START_PARAGRAPH_,_NEWLINE_"
