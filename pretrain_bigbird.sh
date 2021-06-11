@@ -17,4 +17,8 @@ python3 bigbird/bigbird/pretrain/run_pretraining.py \
     --num_warmup_steps 10000 \
     --save_checkpoints_steps 50000 \
     --max_eval_steps 1000 \
-    --vocab_model ${MODEL_DIR}/sp_wiki40b_32k.model
+    --vocab_model ${MODEL_DIR}/sp_wiki40b_32k.model \
+    --cls_id 4 \
+    --sep_id 5 \
+    --mask_id 6
+
