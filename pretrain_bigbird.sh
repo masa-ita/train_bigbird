@@ -1,6 +1,6 @@
 #!/bin/bash
 python3 bigbird/bigbird/pretrain/run_pretraining.py \
-    --data_dir tfds://wiki40b/ja \
+    --data_dir gs://tfds-data/datasets/wiki40b/ja \
     --output_dir ${MODEL_DIR} \
     --max_encoder_length 4096 \
     --max_predictions_per_seq 75 \
