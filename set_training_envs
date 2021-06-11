@@ -1,3 +1,4 @@
 export STORAGE_BUCKET=$1
 export MODEL_DIR=gs://${STORAGE_BUCKET}/models/bigbird
 export TPU_NAME=train-bigbird
+export PATH="$PATH:`python -m site --user-base`/bin"
