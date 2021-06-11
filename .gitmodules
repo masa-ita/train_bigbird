@@ -1,0 +1,3 @@
+[submodule "bigbird"]
+	path = bigbird
+	url = https://github.com/masa-ita/bigbird
