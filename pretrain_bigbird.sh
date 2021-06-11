@@ -1,0 +1,20 @@
+#!/bin/bash
+python3 bigbird/bigbird/pretrain/run_pretraining.py \
+    --data_dir tfds://wiki40b/ja \
+    --output_dir ${MODEL_DIR} \
+    --max_encoder_length 4096 \
+    --max_predictions_per_seq 75 \
+    --masked_lm_prob 0.15 \
+    --substitute_newline " " \
+    --do_train \
+    --do_eval \
+    --do_export \
+    --train_batch_size 4 \
+    --eval_batch_size 4 \
+    --optimizer AdamWeightDecay \
+    --learning_rate 1e-4 \
+    --num_train_steps 1400000 \
+    --num_warmup_steps 10000 \
+    --save_checkpoints_steps 50000 \
+    --max_eval_steps 1000 \
+    --vocab_model ${MODEL_DIR}/sp_wiki40b_32k.model
