@@ -20,5 +20,10 @@ python3 bigbird/bigbird/pretrain/run_pretraining.py \
     --vocab_model ${MODEL_DIR}/sp_wiki40b_32k.model \
     --cls_token_id 4 \
     --sep_token_id 5 \
-    --mask_token_id 6
+    --mask_token_id 6 \
+    --use_tpu \
+    --tpu_name="$TPU_NAME" \
+    --tpu_zone=europe-west4-a \
+    --gcp_project="$PROJECT_ID" \
+    --num_tpu_cores=8 \
 
