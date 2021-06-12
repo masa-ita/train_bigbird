@@ -23,7 +23,5 @@ python3 bigbird/bigbird/pretrain/run_pretraining.py \
     --mask_token_id 6 \
     --use_tpu \
     --tpu_name="$TPU_NAME" \
-    --tpu_zone=europe-west4-a \
-    --gcp_project="$PROJECT_ID" \
-    --num_tpu_cores=8 \
+    --num_tpu_cores=8
 
