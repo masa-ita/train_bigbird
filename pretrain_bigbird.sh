@@ -1,5 +1,5 @@
 #!/bin/bash
-python3 bigbird/bigbird/pretrain/run_pretraining.py \
+python3 run_pretraining.py \
     --data_dir gs://${MODEL_DIR}/wiki40b_bert_4096.tfrecord \
     --output_dir ${MODEL_DIR} \
     --preprocessed_data \
