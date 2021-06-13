@@ -1,8 +1,9 @@
 #!/bin/bash
 python3 run_pretraining.py \
-    --data_dir gs://${MODEL_DIR}/wiki40b_bert_4096.tfrecord \
+    --data_dir gs://${STORAGE_BUCKET}/data/ \
     --output_dir ${MODEL_DIR} \
     --preprocessed_data \
+    --max_predictions_per_seq 20 \
     --do_train \
     --do_eval \
     --do_export \
