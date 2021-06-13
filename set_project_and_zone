@@ -1,2 +1,4 @@
 export PROJECT_ID=$1
 gcloud config set project ${PROJECT_ID}
+export GCP_ZONE=$2
+gcloud config set compute/zone $2
