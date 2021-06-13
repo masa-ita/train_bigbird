@@ -1,11 +1,8 @@
 #!/bin/bash
 python3 bigbird/bigbird/pretrain/run_pretraining.py \
-    --data_dir tfds://wiki40b/ja \
+    --data_dir gs://${MODEL_DIR}/wiki40b_bert_4096.tfrecord \
     --output_dir ${MODEL_DIR} \
-    --max_encoder_length 4096 \
-    --max_predictions_per_seq 75 \
-    --masked_lm_prob 0.15 \
-    --substitute_newline " " \
+    --preprocessed_data \
     --do_train \
     --do_eval \
     --do_export \
@@ -17,10 +14,8 @@ python3 bigbird/bigbird/pretrain/run_pretraining.py \
     --num_warmup_steps 10000 \
     --save_checkpoints_steps 50000 \
     --max_eval_steps 1000 \
-    --vocab_model ${MODEL_DIR}/sp_wiki40b_32k.model \
-    --cls_token_id 4 \
-    --sep_token_id 5 \
-    --mask_token_id 6 \
+    --vocab_model_file ${MODEL_DIR}/sp_wiki40b_32k.model \
+    --use_nsp \
     --use_tpu \
     --tpu_name="$TPU_NAME" \
     --num_tpu_cores=8
