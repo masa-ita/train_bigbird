@@ -1,6 +1,6 @@
 #!/bin/bash
 python3 run_pretraining.py \
-    --data_dir ${STORAGE_BUCKET}/data/ \
+    --data_dir gs://${STORAGE_BUCKET}/data/ \
     --output_dir ${MODEL_DIR} \
     --preprocessed_data \
     --max_encoder_length 4096 \
