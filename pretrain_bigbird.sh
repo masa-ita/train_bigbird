@@ -8,7 +8,7 @@ python3 run_pretraining.py \
     --do_train \
     --do_eval \
     --do_export \
-    --train_batch_size 4 \
+    --train_batch_size 2 \
     --eval_batch_size 4 \
     --optimizer AdamWeightDecay \
     --learning_rate 1e-4 \
