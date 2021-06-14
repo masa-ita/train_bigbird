@@ -1,4 +1,5 @@
 import sys
+import argparse
 import re
 from tqdm import tqdm
 import tensorflow_datasets as tfds
@@ -14,19 +15,17 @@ def break_lines(text):
     return(text)
 
 def main():
-    args = sys.argv
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--split", type=str, choices=['train', 'validation', 'test'], 
+                        help="dataset split: train, validation, test", default='train')
+    parser.add_argument("--output_file", type=str, help="output file contains sentences", required=True)
+    parser.add_argument("--cache_dir", type=str, help="tensorflow datasets cache directory")
 
-    if len(args) == 3:
-        cache_dir = args[1]
-    elif len(args) == 2:
-        cache_dir = None
-    else:
-        print('Usage: python wiki40b_to_text.py /path/to/output /path/to/cache')
-        exit(1)
+    args = parser.parse_args()
     
-    dataset = tfds.load("wiki40b/ja", data_dir=cache_dir) 
-    with open(args[1], 'w') as f:
-        for data in tqdm(dataset['train']):
+    dataset = tfds.load("wiki40b/ja", data_dir=args.cache_dir) 
+    with open(args.output_file, 'w') as f:
+        for data in tqdm(dataset[args.split]):
             text = data['text'].numpy().decode('UTF-8')
             f.write(break_lines(text))
 
