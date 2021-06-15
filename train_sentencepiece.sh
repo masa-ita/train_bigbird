@@ -1,7 +1,12 @@
 #!/bin/bash
+if [ $# -ne 2 ]; then
+  echo "Usage: train_sentencepiece.sh <input_file> <model_prefix>" 1>&2
+  exit 1
+fi
+
 /usr/local/bin/spm_train \
-  --input=/srv/datasets/wiki40b/wiki40b_ja_sentences.txt \
-  --model_prefix="/srv/datasets/wiki40b/spm_BPE_32K" \
+  --input=$1 \
+  --model_prefix=$2 \
   --vocab_size=32000 \
   --character_coverage=0.9995 \
   --model_type=bpe \
