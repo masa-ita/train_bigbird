@@ -1,6 +1,6 @@
 #!/bin/bash
 python3 run_pretraining.py \
-    --data_dir gs://${STORAGE_BUCKET}/data/ \
+    --data_dir ${DATA_DIR} \
     --output_dir ${MODEL_DIR} \
     --preprocessed_data \
     --max_encoder_length 4096 \
@@ -14,11 +14,10 @@ python3 run_pretraining.py \
     --learning_rate 1e-4 \
     --num_train_steps 1400000 \
     --num_warmup_steps 10000 \
-    --save_checkpoints_steps 50000 \
+    --save_checkpoints_steps 10000 \
     --max_eval_steps 1000 \
     --vocab_model_file ${MODEL_DIR}/spm_BPE_32K.model \
     --use_nsp \
     --use_tpu \
     --tpu_name="$TPU_NAME" \
     --num_tpu_cores=8
-

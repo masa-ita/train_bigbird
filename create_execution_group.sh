@@ -3,4 +3,6 @@ gcloud compute tpus execution-groups create \
     --zone=$GCP_ZONE \
     --tf-version=2.5.0 \
     --machine-type=n1-standard-8 \
-    --accelerator-type=v3-8
+    --accelerator-type=v3-8 \
+    --preemptible \
+    --preemptible-vm
