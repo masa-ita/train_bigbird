@@ -12,9 +12,9 @@ python3 run_pretraining.py \
     --eval_batch_size 4 \
     --optimizer AdamWeightDecay \
     --learning_rate 1e-4 \
-    --num_train_steps 1400000 \
+    --num_train_steps 100000 \
     --num_warmup_steps 10000 \
-    --save_checkpoints_steps 10000 \
+    --save_checkpoints_steps 5000 \
     --max_eval_steps 1000 \
     --vocab_model_file ${MODEL_DIR}/spm_BPE_32K.model \
     --cls_token_id 4 \
