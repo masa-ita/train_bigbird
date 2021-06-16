@@ -17,6 +17,9 @@ python3 run_pretraining.py \
     --save_checkpoints_steps 10000 \
     --max_eval_steps 1000 \
     --vocab_model_file ${MODEL_DIR}/spm_BPE_32K.model \
+    --cls_token_id 4 \
+    --sep_token_id 5 \
+    --mask_token_id 6 \
     --use_nsp \
     --use_tpu \
     --tpu_name="$TPU_NAME" \
