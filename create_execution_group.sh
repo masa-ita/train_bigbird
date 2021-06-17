@@ -6,3 +6,5 @@ gcloud compute tpus execution-groups create \
     --accelerator-type=v3-8 \
     --preemptible \
     --preemptible-vm
+# after exit do cleanup
+./cleanup.sh

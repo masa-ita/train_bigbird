@@ -24,3 +24,6 @@ python3 run_pretraining.py \
     --use_tpu \
     --tpu_name="$TPU_NAME" \
     --num_tpu_cores=8
+# shutdown
+sudo shutdown -h now
+ 
