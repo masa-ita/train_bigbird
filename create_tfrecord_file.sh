@@ -1,8 +1,8 @@
 python3 src/create_pretraining_data.py \
     --input_file=$1 \
     --output_file=$2 \
-    --model_file={$3}.model \
-    --vocab_file={$3}.vocab \
+    --model_file=$3.model \
+    --vocab_file=$3.vocab \
     --do_lower_case=True \
     --max_seq_length=4096 \
     --max_predictions_per_seq=615 \
