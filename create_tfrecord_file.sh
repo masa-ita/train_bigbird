@@ -1,0 +1,12 @@
+python3 src/create_pretraining_data.py \
+    --input_file=$1 \
+    --output_file=$2 \
+    --model_file={$3}.model \
+    --vocab_file={$3}.vocab \
+    --do_lower_case=True \
+    --max_seq_length=4096 \
+    --max_predictions_per_seq=615 \
+    --masked_lm_prob=0.15 \
+    --random_seed=0 \
+    --dupe_factor=10 \
+    --do_whole_word_mask=False
