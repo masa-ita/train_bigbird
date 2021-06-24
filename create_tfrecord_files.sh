@@ -3,7 +3,7 @@ BASENAME=${FILE##*/}
 EXT=${FILE##*.}
 STEM=${BASENAME%.*}
 python3 src/create_pretraining_data.py \
-    --input_file=$f \
+    --input_file=$FILE \
     --output_file=$2/$STEM.tfrecords-$EXT \
     --model_file=$3.model \
     --vocab_file=$3.vocab \
