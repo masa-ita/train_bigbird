@@ -1,6 +1,6 @@
 for FILE in $1/*; do
 BASENAME=${FILE##*/}
-EXT=${FILE%.*}
+EXT=${FILE##*.}
 STEM=${BASENAME%.*}
 python3 src/create_pretraining_data.py \
     --input_file=$f \
