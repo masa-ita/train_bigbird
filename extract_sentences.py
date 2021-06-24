@@ -19,7 +19,7 @@ def main(args):
     splits = tfds.even_splits(args.split, n=args.num_output_files)
     for i, split in enumerate(tqdm(splits)):            
         dataset = tfds.load("wiki40b/ja", split=split, data_dir=args.cache_dir)
-        output_file = "{}-{}.txt".format(args.output_prefix, i)
+        output_file = "{}.{:5d}".format(args.output_prefix, i)
         with open(output_file, 'w') as f:
             for data in tqdm(dataset):
                 text = data['text'].numpy().decode('UTF-8')
