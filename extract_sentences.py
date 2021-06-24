@@ -19,7 +19,7 @@ def main(args):
     splits = tfds.even_splits(args.split, n=args.num_output_files)
     for i, split in enumerate(tqdm(splits)):            
         dataset = tfds.load("wiki40b/ja", split=split, data_dir=args.cache_dir)
-        output_file = "{}.{:5d}".format(args.output_prefix, i)
+        output_file = os.path.join(args.output_dir, "{}.{:5d}".format(args.split, i))
         with open(output_file, 'w') as f:
             for data in tqdm(dataset):
                 text = data['text'].numpy().decode('UTF-8')
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", type=str, choices=['train', 'validation', 'test'], 
                         help="dataset split: train, validation, test", default='train')
-    parser.add_argument("--output_prefix", type=str, help="output file prefix", required=True)
+    parser.add_argument("--output_dir", type=str, help="output directory", required=True)
     parser.add_argument("--num_output_files", type=int, help="number of output files", default=1)
     parser.add_argument("--cache_dir", type=str, help="tensorflow datasets cache directory")
 
