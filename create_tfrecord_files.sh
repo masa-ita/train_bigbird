@@ -9,7 +9,7 @@ python3 src/create_pretraining_data.py \
     --vocab_file=$3.vocab \
     --do_lower_case=True \
     --max_seq_length=4096 \
-    --max_predictions_per_seq=615 \
+    --max_predictions_per_seq=600 \
     --masked_lm_prob=0.15 \
     --random_seed=0 \
     --dupe_factor=10 \
