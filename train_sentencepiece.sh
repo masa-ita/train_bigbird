@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -ne 2 ]; then
+if [ $# -ne 3 ]; then
   echo "Usage: train_sentencepiece.sh <input_file> <model_type> <model_prefix>" 1>&2
   exit 1
 fi
